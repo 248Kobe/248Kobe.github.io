@@ -177,7 +177,7 @@ section h4 { font-size: .98rem; margin: 1rem 0 .5rem; }
 .figure img { border-radius: var(--radius); border: 1px solid var(--line); }
 /* Paper figures have a white background: keep them on white in both themes */
 .media.fig { background: #fff; border: 1px solid var(--line); display: grid; place-items: center; padding: .6rem; }
-.project .media.fig img { object-fit: contain; }
+.project .media.fig img { object-fit: contain; object-position: center; }
 .paper-fig img { background: #fff; padding: .8rem; max-width: 900px; width: 100%; }
 .figure figcaption { color: var(--muted); font-size: .88rem; margin-top: .6rem; }
 .note { color: var(--muted); font-size: .88rem; margin: 0 0 .6rem; }
