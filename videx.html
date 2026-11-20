@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VIDEX · Eunchan Jung</title>
+  <meta name="description" content="VIDEX: semantic indexing and evidence-guided question answering for long surveillance video." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="nav-name" href="index.html">Eunchan Jung</a>
+      <nav class="nav-links">
+        <a href="#phase1">Phase 1</a>
+        <a href="#phase2">Phase 2</a>
+        <a href="index.html" class="nav-cv">← Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <section class="page-head">
+      <p class="kicker">HAIL, Handong Global University · 2025 – 2026 · Team lead</p>
+      <h1>VIDEX</h1>
+      <p class="tagline">Make hours of CCTV searchable, then answerable with evidence.</p>
+      <p class="meta">Advisor: Prof. Charmgil Hong · Team: Eunseo Jeong, Ulim Lee, Youngjun Shim <!-- TODO: confirm per phase --></p>
+    </section>
+
+    <!-- TODO: demo video (YouTube unlisted) — uncomment when ready
+    <section class="demo">
+      <div class="media video"><iframe src="https://www.youtube.com/embed/VIDEO_ID" title="VIDEX demo" allowfullscreen></iframe></div>
+    </section>
+    -->
+
+    <!-- ===================== PHASE 1 ===================== -->
+    <section id="phase1">
+      <h2>Phase 1 · Semantic Indexing</h2>
+      <p class="kicker">First author · BDMS @ DASFAA 2026 (oral) · to appear (Springer)</p>
+
+      <dl class="brief">
+        <dt>Problem</dt><dd>Video-text models are trained on short clips. CCTV is long, untrimmed, and events are rare.</dd>
+        <dt>Idea</dt><dd>Index each segment with a VLM caption <b>grounded on detected objects</b>, then search it with hybrid dense + BM25 retrieval.</dd>
+        <dt>Role</dt><dd>Research question, method, experiment design, writing, oral talk.</dd>
+      </dl>
+
+      <figure class="figure paper-fig">
+        <img src="assets/img/videx_phase1.png" alt="VIDEX semantic indexing pipeline: segmentation, YOLO + Grounding DINO, Qwen3-VL captions, MiniLM embeddings, vector DB" />
+      </figure>
+
+      <div class="table-wrap narrow">
+        <table>
+          <thead><tr><th>UCF-Crime, 1,300 queries</th><th>Recall@20</th></tr></thead>
+          <tbody>
+            <tr><td>X-CLIP</td><td>0.025</td></tr>
+            <tr><td>InternVideo2</td><td>0.027</td></tr>
+            <tr><td>VIDEX, plain caption</td><td>0.076</td></tr>
+            <tr class="best"><td>VIDEX, object-grounded caption</td><td>0.102</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <figure class="figure paper-fig">
+        <img src="assets/img/videx_phase1_case.png" alt="Case study: X-CLIP ranks the target 26th, plain captioning 4th, VIDEX 1st" />
+        <figcaption>Query “person touching the door handle”: the target segment ranks 26th → 4th → <b>1st</b>.</figcaption>
+      </figure>
+    </section>
+
+    <!-- ===================== PHASE 2 ===================== -->
+    <section id="phase2">
+      <h2>Phase 2 · Evidence-Guided QA Agent</h2>
+      <p class="kicker">🏆 1st Place, Capstone Festival 2026</p>
+
+      <dl class="brief">
+        <dt>Problem</dt><dd>VLMs answer questions about video, but investigators can't verify <em>why</em>.</dd>
+        <dt>Idea</dt><dd>Seven perception tools run once. A ReAct planner fetches only the evidence it needs and cites the source tool for each claim.</dd>
+        <dt>Role</dt><dd>Problem definition, agent architecture, evaluation design, team lead.</dd>
+      </dl>
+
+      <figure class="figure">
+        <img src="assets/img/videx_agent_gui.jpg" alt="VIDEX Agent interface: CCTV player, tool activity, reasoning log with evidence-highlighted answer" />
+        <figcaption>Each claim in the answer is underlined in the color of the tool that supports it.</figcaption>
+      </figure>
+
+      <div class="table-wrap narrow">
+        <table class="wide">
+          <thead><tr><th>SurveillanceVQA-589K (0–5)</th><th>Temporal</th><th>Avg.</th></tr></thead>
+          <tbody>
+            <tr><td>VLM only</td><td>3.69</td><td>3.85</td></tr>
+            <tr><td>VLM + all tool outputs</td><td class="bad">2.91</td><td>3.91</td></tr>
+            <tr class="best"><td>VIDEX Agent</td><td>3.96</td><td>4.22</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="result">More evidence isn't better evidence: dumping all tool outputs hurt temporal reasoning.</p>
+    </section>
+
+    <!-- ===================== NEXT ===================== -->
+    <section id="next">
+      <h2>What's next</h2>
+      <p class="statement">
+        Both systems saw video as <em>events</em>, not as a <em>world</em> with objects that persist and change.
+        That gap is why I'm moving to world models and robot learning.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="wrap footer">
+    <p>© <span id="year"></span> Eunchan Jung · <a href="index.html">Home</a></p>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

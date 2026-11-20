@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eunchan Jung</title>
+  <meta name="description" content="Eunchan Jung — from video understanding to world models and robot learning." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="nav-name" href="#top">Eunchan Jung</a>
+      <nav class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#about">About</a>
+        <a href="assets/pdf/Eunchan_Jung_CV.pdf" class="nav-cv">CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="wrap">
+
+    <!-- ===================== HERO ===================== -->
+    <!-- When the intro video is ready: remove "solo" and uncomment the video block below. -->
+    <section class="hero solo">
+      <div class="hero-text">
+        <img class="avatar" src="assets/img/profile.jpg" alt="Eunchan Jung" onerror="this.style.display='none'" />
+        <h1>Eunchan Jung</h1>
+        <p class="tagline">From AI that understands video <span class="arrow">→</span> AI that understands the world and acts in it.</p>
+        <p class="lead">
+          B.S. AI &amp; Computer Engineering, Handong Global University ’26 (Magna Cum Laude, early graduation).
+          Interested in <strong>world models</strong> and <strong>robot learning</strong>.
+        </p>
+        <p class="status"><span class="dot"></span> Seeking a research internship · available full-time</p>
+        <div class="links">
+          <a class="btn primary" href="mailto:ecjung077@gmail.com">ecjung077@gmail.com</a>
+          <a class="btn" href="assets/pdf/Eunchan_Jung_CV.pdf">CV</a>
+          <a class="btn" href="https://github.com/248Kobe">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/ecjung077/">LinkedIn</a>
+        </div>
+      </div>
+      <!-- TODO: 60-second intro video
+      <div class="media video">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Intro" allowfullscreen></iframe>
+      </div>
+      -->
+    </section>
+
+    <!-- ===================== RESEARCH ===================== -->
+    <section id="research">
+      <h2>Research</h2>
+      <p class="statement">
+        My CCTV systems could find and explain <em>events</em>, but never kept track of the <em>world</em>:
+        where objects are and how they change. I want to build representations that stay consistent over time
+        and can be used for action. I'm currently building a low-cost robot arm to study this.
+      </p>
+      <p class="chips">
+        <span>World models</span><span>Long-term memory</span><span>3D/4D scene representation</span><span>Robot learning</span>
+      </p>
+    </section>
+
+    <!-- ===================== NEWS ===================== -->
+    <section id="news">
+      <h2>News</h2>
+      <ul class="news">
+        <li><time>2026.08</time> Graduated early, Magna Cum Laude</li>
+        <li><time>2026.05</time> <strong>1st place</strong>, Capstone Festival (VIDEX Agent, team lead)</li>
+        <li><time>2026.04</time> Oral presentation at BDMS @ DASFAA 2026, Jeju</li>
+      </ul>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <article class="project">
+        <a class="media fig" href="videx.html#phase1">
+          <img src="assets/img/videx_phase1.png" alt="VIDEX semantic indexing pipeline" />
+        </a>
+        <div class="project-body">
+          <p class="kicker">VIDEX Phase 1 · Team Lead, First Author · DASFAA 2026 Workshop (oral)</p>
+          <h3>Semantic Indexing for Long Surveillance Video</h3>
+          <p>Index each video segment with a VLM caption grounded on detected objects, so investigators can search hours of CCTV in plain language.</p>
+          <p class="result"><b>3.8×</b> Recall@20 over InternVideo2 on UCF-Crime</p>
+          <a class="more" href="videx.html#phase1">Details →</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <a class="media" href="videx.html#phase2">
+          <img src="assets/img/videx_agent_gui.jpg" alt="VIDEX Agent interface" />
+        </a>
+        <div class="project-body">
+          <p class="kicker">VIDEX Phase 2 · Team Lead · 🏆 1st Place, Capstone Festival</p>
+          <h3>Evidence-Guided Video QA Agent</h3>
+          <p>A VLM agent that picks evidence from seven perception tools (ReAct) and shows which tool supports each part of its answer.</p>
+          <p class="result">Beat VLM-only on <b>all 4</b> criteria; selective evidence beat using all tools</p>
+          <a class="more" href="videx.html#phase2">Details →</a>
+        </div>
+      </article>
+
+      <!-- Robot arm card: hidden until results are in; then uncomment and move above VIDEX.
+      <article class="project" id="robot">
+        <div class="media">
+          TODO: img src="assets/img/robot_arm.gif"
+          <div class="placeholder">Robot arm GIF</div>
+        </div>
+        <div class="project-body">
+          <p class="kicker">Independent · In progress</p>
+          <h3>When Robot Policies Lose Track of the World</h3>
+          <p>A 3D-printed robot arm and ACT policies, tested under object displacement and occlusion.</p>
+          TODO result line: Success drops from X% to Y% when ...
+        </div>
+      </article>
+      -->
+
+      <p class="earlier"><b>Earlier:</b> Korean sign language translation from hand and face landmarks (2024)</p>
+    </section>
+
+    <!-- ===================== PUBLICATIONS ===================== -->
+    <section id="publications">
+      <h2>Publications</h2>
+      <ol class="pubs">
+        <li>
+          <span class="pub-title">Content-Grounded Semantic Identifier Construction for Surveillance Video Indexing</span>
+          <strong>Eunchan Jung</strong>, Eunseo Jeong, Ulim Lee, Youngjun Shim, Charmgil Hong<br />
+          <em>BDMS Workshop @ DASFAA 2026</em> · Oral · <span class="soon">to appear (Springer)</span>
+          <!-- TODO: when published, add <a href="SPRINGER_URL">[Springer]</a> -->
+        </li>
+        <li>
+          <span class="pub-title">Software Design for Surveillance Video Analysis and Retrieval Using Semantic Multi-modal Video Indexing</span>
+          Youngjun Shim, Ulim Lee, Eunseo Jeong, <strong>Eunchan Jung</strong>, Charmgil Hong<br />
+          <em>Korea Multimedia Society Spring Conference 2026</em>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about">
+      <h2>About</h2>
+      <ul class="timeline">
+        <li><span class="when">2025 – 2026</span><div><strong>Undergraduate Researcher</strong>, HAIL, Handong (Prof. Charmgil Hong)</div></li>
+        <li><span class="when">2024 – 2025</span><div><strong>Computer Vision Research Intern</strong>, TwigFarm</div></li>
+        <li><span class="when">2024 – 2026</span><div><strong>Teaching Assistant</strong>, 4 CS courses</div></li>
+        <li><span class="when">2025</span><div><strong>President</strong>, Computer Research Association (largest CS club at HGU)</div></li>
+      </ul>
+      <p class="about-line">
+        Grew up in Nepal and the USA · Korean &amp; English (native) · Military service completed
+      </p>
+      <p class="about-line">
+        <b>Skills</b> Python, PyTorch, C/C++ · VLMs, detection, video retrieval, LLM agents · LeRobot, imitation learning
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="wrap footer">
+    <p>© <span id="year"></span> Eunchan Jung · ecjung077@gmail.com</p>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
